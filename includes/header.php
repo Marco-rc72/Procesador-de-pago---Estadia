@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba</title>
+    <title>Mi Proyecto</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>¡Funcionando!</h1>
-</body>
-</html>
+    <header>
+        <h1>Bienvenido a Mi Proyecto</h1>
+    </header>
