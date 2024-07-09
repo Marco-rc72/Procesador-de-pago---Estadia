@@ -1,6 +1,8 @@
 <footer>
-        <p>&copy; 2024 Mi Proyecto. Todos los derechos reservados.</p>
-    </footer>
+<img src="assets/img/footer.png" alt="Footer">
+
+</footer>
+
     <script src="js/scripts.js"></script>
 </body>
 </html>
