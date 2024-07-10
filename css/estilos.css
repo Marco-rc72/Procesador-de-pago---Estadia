@@ -5,45 +5,110 @@ body {
     background-color: #f0f0f0;
 }
 
-footer {
-    background-color: #006699;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
 
 .espacio {
     margin-top: 3%;
     margin-left: 10%;
 }
+
 .tabla {
     margin: auto;
     margin-top: 3%;
+    margin-left: 15%;
     margin-bottom: 3%;
-    width: 1200px;
-    height: 1200px;
+    width: 1100px;
+    height: 1100px;
 }
+
 table {
     border-collapse: collapse;
 }
-table td,
-table th {
-    border: 2px solid black;
+
+table td {
+    border-left: 2px solid #C6C6C6;
+    border-right: 2px solid #C6C6C6;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.cabeza-carta {
+    height: 200px;
+    font-size: 30px;
     text-align: center;
 }
+
+.titulo-carta {
+    height: 150px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.info-carta {
+    height: 800px;
+    vertical-align: top;
+}
+
+.info {
+    font-size: 20px;
+}
+
+.boton-carta {
+    height: 150px;
+    border-bottom: 2px solid #C6C6C6;
+    text-align: center;
+}
+
+.boton {
+    background-color: #006699;
+    border-radius: 30px;
+    font-size: 25px;
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.boton-izquierda {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 150px;
+    top: 900px;
+    cursor: pointer;
+}
+
+.boton-derecha {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 100px;
+    top: 900px;
+    cursor: pointer;
+}
+
 th {
     background-color: #006699;
     color: #f0f0f0;
+}
+
+.check {
+    margin-top: 10px;
+    padding: 3px;
+    padding-left: 30px;
+    padding-right: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .acceso {
     flex: 0;
     margin-left: 3%;
     position: fixed;
+    z-index: 1;
 }
 
 .contenedor-flex {
@@ -51,3 +116,12 @@ th {
     flex-direction: row;
 }
 
+footer {
+    background-color: #006699; 
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

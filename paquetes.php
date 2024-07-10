@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,8 @@
     <link href="assets/img/verificado.png">    
     <link href="assets/img/footer.png">    
     <link href="assets/svg/Accesos.svg">    
+    <link href="assets/svg/Boton-izquierda.svg">    
+    <link href="assets/svg/Boton-derecha.svg">    
 </head>
 <body>
     <div class="espacio" >
@@ -18,29 +19,107 @@
     </div>
     <div class="contenedor-flex">
         <img class="acceso" src="assets/svg/Accesos.svg" alt="Ejemplo de redescuelas">
+        <a href="paquetes_2.php"> 
+            <img class="boton-izquierda" src="assets/svg/Boton-izquierda.svg" alt="Verificado">
+        </a>
         <table class="tabla">
-            <tr>
-                <th>Ejemplo1</th>
-                <th>Ejemplo2</th>
-                <th>Ejemplo3</th>
+            <tr class="cabeza-carta">
+                <th>Básico</th>
+                <th>Básico Plus</th>
+                <th>Lite</th>
             </tr>
-            <tr>
-                <td> Titulo 1</td>
-                <td> Titulo2</td>
-                <td> Titulo3</td>
+            <tr class="titulo-carta">
+                <td> GRATIS</td>
+                <td> 199.99</td>
+                <td> 399.99 </td>
             </tr>
-            <tr>
-                <td> Info-2</td>
-                <td> Info 2-2</td>
-                <td> Info 3-2</td>
+            <tr class="info-carta">
+                <td> 
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Nombre</p>
+                    </div>
+                    <div class="contenedor-flex">
+                    <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Portada de Default</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Nombre</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Teléfono</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Dirección</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Niveles</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Portada de Default</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Nombre</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Teléfono</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Direcció</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Niveles</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Portada de Default</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Formulario de contacto</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Imagen de Búsqueda y Logo</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Mapa Básico</p>
+                    </div>
+                    <div class="contenedor-flex">
+                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                        <p>Apuntado en Mapa Personalizado</p>
+                    </div>
+                </td>
             </tr>
-            <tr>
-                <td> Boton 1</td>
-                <td> Boton 2</td>
-                <td> Boton 3 </td>
+            <tr class="boton-carta">
+                <td> 
+                    <div><p class="boton">Comprar</p></div>
+                </td>
+                <td> 
+                    <div><p class="boton">Comprar</p></div>
+                </td>
+                <td> 
+                    <div><p class="boton">Comprar</p></div>
+                </td>
             </tr>
         </table>
-        
+        <a href="paquetes_2.php">
+            <img class="boton-derecha" src="assets/svg/Boton-derecha.svg" alt="Verificado">
+        </a>
     </div>
 <?php
 include 'includes/footer.php';
