@@ -5,20 +5,17 @@ body {
     background-color: #f0f0f0;
 }
 
-
-
 .espacio {
     margin-top: 3%;
     margin-left: 10%;
 }
 
 .tabla {
-    margin: auto;
     margin-top: 3%;
-    margin-left: 15%;
-    margin-bottom: 3%;
-    width: 1100px;
-    height: 1100px;
+    /* margin-bottom: 3%; */
+    min-width: 300px;
+    max-width: 300px;
+    /* height: 1100px; */
 }
 
 table {
@@ -28,11 +25,13 @@ table {
 table td {
     border-left: 2px solid #C6C6C6;
     border-right: 2px solid #C6C6C6;
-    max-width: 200px;
-    min-width: 200px;
+    /* max-width: 200px;
+    min-width: 200px; */
 }
 
 .cabeza-carta {
+    border-left: 2px solid #006699;
+    border-right: 2px solid #006699;
     height: 200px;
     font-size: 30px;
     text-align: center;
@@ -76,7 +75,7 @@ table td {
     width: 40px;
     height: 40px;
     position: absolute;
-    left: 150px;
+    left: 200px;
     top: 900px;
     cursor: pointer;
 }
@@ -85,7 +84,7 @@ table td {
     width: 40px;
     height: 40px;
     position: absolute;
-    right: 100px;
+    right: 200px;
     top: 900px;
     cursor: pointer;
 }
@@ -111,9 +110,28 @@ th {
     z-index: 1;
 }
 
+.contenedor {
+    display: flex;
+    position: relative;
+}
+.contenedor .contenedor-slider {
+    width: 59.3%;
+    max-width: 240%;
+    margin: auto;
+    overflow: hidden;
+}
+
 .contenedor-flex {
     display: flex;
     flex-direction: row;
+}
+
+.slider {
+    display: flex;
+    margin-bottom: 40%;
+    width: 50%;
+    height: 1100px;
+    margin-left: -300px;
 }
 
 footer {
