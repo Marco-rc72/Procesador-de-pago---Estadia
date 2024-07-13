@@ -44,7 +44,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton">Comprar</p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>
@@ -81,7 +81,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton">Comprar</p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>
@@ -134,7 +134,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton">Comprar</p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>
@@ -191,7 +191,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton">Comprar</p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>
@@ -260,7 +260,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton">Comprar</p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>
@@ -337,7 +337,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton"><a href="">Comprar</a></p></div>
+                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
                         </table>

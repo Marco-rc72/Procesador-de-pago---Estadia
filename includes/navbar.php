@@ -3,8 +3,8 @@
             <img src="assets/img/img_nav.png" alt="Imagen logo RedEscuelas">
         </div>
         <div class="separador">
-            <a href="#">Paquetes</a>
-            <a href="#">Historial</a>
-            <a href="#">Facturas</a>
+            <a href="panelControl_paquetes.php">Paquetes</a>
+            <a href="panelControl_historial.php">Historial</a>
+            <a href="panelControl_factura.php">Facturas</a>
         </div>
     </nav>

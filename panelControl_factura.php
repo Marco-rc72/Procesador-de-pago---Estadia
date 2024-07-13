@@ -14,27 +14,31 @@
     ?>
     <h1>Tabla Facturas</h1>
     <p class="boton-agregar"><a href="">Agregar</a></p>
-    <table>
-        <tr>
-            <th>#Paquete</th>
-            <th>Nombre del paquete</th>
-            <th>Detalles del paquete</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Básico</td>
-            <td>Ejemplo</td>
-            <td>GRATIS</td>
-            <td>
-                <div>
-                    <a href="">Mostrar</a>
-                    <a href="">Actualizar</a>
-                    <a href="">Eliminar</a>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="contenedor">
+        <table>
+            <tr>
+                <th>#Factura</th>
+                <th>Fecha</th>
+                <th>#Paquete</th>
+                <th>#Usuario</th>
+                <th>#Metodo de pago</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>7-07-2024</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>
+                    <div>
+                        <a href="">Mostrar</a>
+                        <a href="">Actualizar</a>
+                        <a href="">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

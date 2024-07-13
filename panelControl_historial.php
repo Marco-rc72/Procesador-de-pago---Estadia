@@ -16,17 +16,15 @@
     <p class="boton-agregar"><a href="">Agregar</a></p>
     <table>
         <tr>
-            <th>#Paquete</th>
-            <th>Nombre del paquete</th>
-            <th>Detalles del paquete</th>
-            <th>Precio</th>
+            <th>#Pago</th>
+            <th>Fecha</th>
+            <th>#Factura</th>
             <th>Acciones</th>
         </tr>
         <tr>
             <td>1</td>
-            <td>Básico</td>
-            <td>Ejemplo</td>
-            <td>GRATIS</td>
+            <td>7-07-2024</td>
+            <td>1</td>
             <td>
                 <div>
                     <a href="">Mostrar</a>
