@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    background: black;
+    font-size: 0;
+    height: 110px;
+    display: flex;
+}
+
+nav a {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    letter-spacing: 0;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    left: 0;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    background: #f0f0f0;
+    height: 5px;
+    left: 0;
+    width: 0;
+    bottom: -0.5px;
+    transition: 0.5s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+img {
+    width: 300px;
+    height: 50px;
+}
+
+.logo {
+    display: fixed;
+    position: absolute;
+    padding-left: 10px;
+    top: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.boton-agregar {
+    margin-left: 14%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.boton-agregar a {
+    background-color: black;
+    font-size: 21px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table th,
+td {
+    border: 2 solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 240px;
+    text-align: center;
+}
+table th {
+    background-color: black;
+    color: white;
+}
+
+.linea {
+    display: inline-block;
+}
+table a {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 1px;
+    background-color: black;
+    font-size: 12px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+table a:nth-child(1) {
+    background-color: #3b7fd2;
+}
+table a:nth-child(2) {
+    background-color: #51c73a;
+}
+table a:nth-child(3) {
+    background-color: #dc4242;
+}
+table a:hover {
+    background-color: black;
+}
