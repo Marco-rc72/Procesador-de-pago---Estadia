@@ -5,11 +5,22 @@ body {
     background-color: #f0f0f0;
 }
 
-header, footer {
-    background-color: #333;
+footer {
+    background-color: #006699;
     color: white;
     text-align: center;
     padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+footer img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 main {
@@ -18,3 +29,176 @@ main {
     margin: 2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+header {
+    background-color: #000000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4ch;
+}
+
+header .place2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+header img {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.column-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Cambia las columnas automáticamente según el ancho del contenido */
+    gap: 20px;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+.column-container h2 {
+    background-color: #e0e0e0;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.column {
+    text-align: center;
+    padding: 5px;
+}
+
+.column2 {
+    text-align: center;
+    padding: 5px;
+
+}
+
+.precio {
+    padding: 30px;
+}
+
+.separacion {
+    width: 600px;
+    border-bottom: 2px solid #000000;
+    padding: auto;
+}
+
+.img-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.img-container {
+    width: 120px; /* Ajusta el ancho según sea necesario */
+    height: 120px; /* Ajusta la altura según sea necesario */
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+textarea {
+    width: 100%;
+    max-width: 450px; /* Ajusta el ancho máximo según sea necesario */
+    height: 15px; /* Ajusta la altura según sea necesario */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    resize: horizontal; /* Permitir solo el redimensionamiento vertical */
+}
+
+.exp-container {
+    display: flex;
+    gap: 126px; /* Espacio entre los textarea */
+}
+
+textarea.Mes , textarea.Año {
+    width: 100%;
+    max-width: 80px;
+    resize: horizontal;
+    gap: 5px;
+}
+
+textarea.CVV {
+    width: 100%;
+    max-width: 100px;
+    resize: horizontal;
+}
+
+.titular-container {
+    display: flex;
+    gap: 40px; /* Ajusta el espacio entre los elementos */
+    margin-bottom: 5px; /* Ajusta el espacio inferior */
+    padding: 10px;
+    width: 45%;
+    align-items: flex-start;
+}
+
+.titular-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.exp-cvv-container {
+    display: flex;
+    gap: 40px; /* Ajusta el espacio entre los elementos */
+    margin-bottom: 5px; /* Ajusta el espacio inferior */
+    padding: 10px;
+    width: 45%;
+    align-items: flex-start;
+}
+
+.expiracion-item, .cvv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Estilos previamente definidos ... */
+
+.blue-button {
+    background-color: #006699;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 350px; /* Ajusta el espacio entre el textarea y el botón */
+}
+
+.green-button {
+    background-color: #0ba72d;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 1000px; /* Ajusta el espacio entre el textarea y el botón */
+    gap: 20%;
+}
+
+.cvv-input {
+    display: flex;
+    align-items: center;
+}
+

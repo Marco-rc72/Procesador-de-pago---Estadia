@@ -1,6 +1,4 @@
 <footer>
-        <p>&copy; 2024 Mi Proyecto. Todos los derechos reservados.</p>
+        <img src="img\WhatsApp Image 2024-07-09 at 10.42.07 PM.jpeg" alt="Footer">
     </footer>
-    <script src="js/scripts.js"></script>
-</body>
-</html>
+        <script src="js/scripts.js"></script>
