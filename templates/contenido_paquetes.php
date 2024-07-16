@@ -10,29 +10,41 @@
                     <img class="boton-izquierda" id="btn-izquierda" src="assets/svg/Boton-izquierda.svg" alt="Verificado">
                     <div class="slider" id="slider">
                         <table class="tabla">
-                            <tr>
-                                <th class="cabeza-carta">Básico</th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>GRATIS</td>
-                            </tr>
-                            <tr class="info-carta">
-                                <td> 
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/svg/check.svg" alt="Verificado">
-                                        <p>Nombre</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                    <img class="check" src="assets/svg/check.svg" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
+                            <thead>
+                                <tr>
+                                    <th class="cabeza-carta">Básico</th>
+                                </tr>
+                                <tr class="titulo-carta">
+                                    <td>GRATIS</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                include ('database/conexion.php');
+                                $consulta = "SELECT * FROM package";
+                                $resultado = mysqli_query($conn, $consulta);
+
+                                while ($fila = mysqli_fetch_array($resultado)) { ?>
+                                <tr class="info-carta">
+                                    <td> 
+                                        <div class="contenedor-flex">
+                                            <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                                            <p><?php echo $fila['details_package'] ?></p>
+                                        </div>
+                                        <!-- <div class="contenedor-flex">
+                                            <img class="check" src="assets/svg/check.svg" alt="Verificado">
+                                            <p>Portada de Default</p>
+                                        </div> -->
+                                    </td>
+                                </tr>
+                                <tr class="boton-carta">
                                 <td>
                                 <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
-                            </tr>
+                                </tr>
+                                    
+                                <?php } ?>
+                            </tbody>
                         </table>
                         <table class="tabla">
                             <tr >
