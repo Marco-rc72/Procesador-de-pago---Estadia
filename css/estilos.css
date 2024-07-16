@@ -41,37 +41,40 @@ li {
 }
 
 .espacio {
-    margin-top: 3%;
-    margin-left: 10%;
+    margin: 3% 0 0 10%;
 }
 
 .tabla {
     margin-top: 3%;
-    min-width: 300px;
-    max-width: 300px;
+    margin-inline: 10px;
+    min-width: 350px;
+    max-width: 350px;
 }
 
 table {
+    border-radius: 50px;
     border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-table td {
-    border-left: 2px solid #C6C6C6;
-    border-right: 2px solid #C6C6C6;
-    /* max-width: 200px;
-    min-width: 200px; */
+th {
+    /* background-color: #006699; */
+    color: #f0f0f0;
+    border-radius: 20px 20px 0 0;
 }
 
 .cabeza-carta {
-    border-left: 2px solid #006699;
-    border-right: 2px solid #006699;
-    height: 200px;
+    height: 150px;
     font-size: 30px;
+    color: #006699;
     text-align: center;
 }
 
+
+
 .titulo-carta {
-    height: 150px;
+    height: 90px;
+    font-weight: bolder;
     font-size: 30px;
     text-align: center;
 }
@@ -87,7 +90,6 @@ table td {
 
 .boton-carta {
     height: 150px;
-    border-bottom: 2px solid #C6C6C6;
     text-align: center;
 }
 
@@ -100,33 +102,15 @@ table td {
     text-align: center;
     display: inline-block;
     cursor: pointer;
+    transition: 0.1s;
 }
 .boton a {
     text-decoration: none;    
     color: white;
 }
 
-.boton-izquierda {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 200px;
-    top: 900px;
-    cursor: pointer;
-}
-
-.boton-derecha {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 200px;
-    top: 900px;
-    cursor: pointer;
-}
-
-th {
-    background-color: #006699;
-    color: #f0f0f0;
+.boton:hover {
+    scale: 110% 110%;
 }
 
 .check {
@@ -150,9 +134,42 @@ th {
     position: relative;
 }
 
+.boton-izquierda {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 150px;
+    top: 600px;
+    cursor: pointer;
+    transition: 0.1s;
+    border-radius: 50%;
+}
+.boton-derecha {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 120px;
+    top: 600px;
+    cursor: pointer;
+    transition: 0.1s;
+    border-radius: 50%;
+}
+
+.boton-izquierda:hover {
+    scale: 110% 110%;
+    padding: 5px;
+    background-color: #e0e0e0;
+}
+
+.boton-derecha:hover {
+    scale: 110% 110%;
+    padding: 5px;
+    background-color: #e0e0e0;
+}
+
 .contenedor .contenedor-slider {
-    width: 900px;
-    max-width: 240%;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
 }
@@ -162,6 +179,9 @@ th {
     flex-direction: row;
 }
 
+p {
+    font-weight: bold;
+}
 .slider {
     display: flex;
     margin-bottom: 40%;

@@ -91,6 +91,7 @@ table {
 table th,
 td {
     border: 2 solid black;
+    border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     width: 240px;
