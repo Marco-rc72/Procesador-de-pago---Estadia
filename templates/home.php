@@ -4,17 +4,17 @@
                 <h2>Elige tu forma de pago</h2>
                 <div class="img-container">
                     <a href="datos_tarjeta.php">
-                        <img src="img\png-transparent-paypal-logo-paypal-logo-paypal-blue-text-trademark.png" alt="Paypal">
+                        <img src="assets/img\png-transparent-paypal-logo-paypal-logo-paypal-blue-text-trademark.png" alt="Paypal">
                     </a>
                 </div>
                 <div class="img-container">
                     <a href="datos_tarjeta.php">
-                        <img src="img/images.png" alt="Image">
+                        <img src="assets/img/images.png" alt="Image">
                     </a>
                 </div>
                 <div class="img-container">
                     <a href="datos_tarjeta.php">
-                        <img src="img/banamex.png" alt="Banamex">
+                        <img src="assets/img/banamex.png" alt="Banamex">
                     </a>
                 </div>
             </div>

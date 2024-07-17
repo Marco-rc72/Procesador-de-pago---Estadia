@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="place2">
-            <img src="img/redEScuelas-White_Logo.png" alt="Logo">
+            <img src="assets/img/redEScuelas-White_Logo.png" alt="Logo">
         </div>
     </header>
 </body>

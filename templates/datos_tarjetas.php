@@ -4,10 +4,10 @@
                 <h2>Pagar con tarjeta de crédito/débito</h2>
                 <div class="img-row">
                     <div class="img-container">
-                        <img src="img/banamex.png" alt="Banamex">
+                        <img src="assets/img/banamex.png" alt="Banamex">
                     </div>
                     <div class="img-container">
-                        <img src="img/logo_mastercard-despues.jpg" alt="Mastercard">
+                        <img src="assets/img/logo_mastercard-despues.jpg" alt="Mastercard">
                     </div>
                 </div>
             </div>
