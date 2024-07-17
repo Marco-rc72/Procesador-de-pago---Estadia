@@ -1,5 +1,5 @@
 <?php
-include ('database/conexion.php');
+include ('config/database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ include ('database/conexion.php');
                 <td><?php echo $fila['id_package'] ?></td>
                 <td><?php echo $fila['name_package'] ?></td>
                 <td><?php echo $fila['details_package'] ?></td>
-                <td>GRATIS</td>
+                <td><?php echo $fila['price'] ?></td>                
                 <td>
                     <div>
                         <a href="">Mostrar</a>
