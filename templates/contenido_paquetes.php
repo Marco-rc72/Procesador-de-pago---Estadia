@@ -20,7 +20,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include ('database/conexion.php');
+                                include ('config/database.php');
                                 $consulta = "SELECT * FROM package";
                                 $resultado = mysqli_query($conn, $consulta);
 
@@ -29,7 +29,7 @@
                                     <td> 
                                         <div class="contenedor-flex">
                                             <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                            <p><?php echo $fila['details_package'] ?></p>
+                                            <p><?php echo $fila['name_package'] ?></p>
                                         </div>
                                         <!-- <div class="contenedor-flex">
                                             <img class="check" src="assets/svg/check.svg" alt="Verificado">
@@ -37,13 +37,13 @@
                                         </div> -->
                                     </td>
                                 </tr>
+                                <?php } ?>
                                 <tr class="boton-carta">
                                 <td>
                                 <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                                 </tr>
                                     
-                                <?php } ?>
                             </tbody>
                         </table>
                         <table class="tabla">
