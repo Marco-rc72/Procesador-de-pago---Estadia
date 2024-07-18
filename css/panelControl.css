@@ -94,6 +94,11 @@ h1 {
     text-decoration: none;
 }
 
+.boton-agregar a:hover{
+    background: #d0d0d0;
+    color: black;
+}
+
 /* .boton-redir {
     background-color: #006699;
     font-size: 21px;
