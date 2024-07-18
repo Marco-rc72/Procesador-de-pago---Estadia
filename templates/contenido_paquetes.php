@@ -20,7 +20,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include ('database/conexion.php');
+                                include ('config/database.php');
                                 $consulta = "SELECT * FROM package";
                                 $resultado = mysqli_query($conn, $consulta);
 
