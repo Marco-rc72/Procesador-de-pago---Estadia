@@ -6,10 +6,11 @@
     <title>RedEscuelas</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="assets/img/verificado.png">    
+    <link href="assets/img/green-check.png">    
+    <link href="assets/img/btn-izquierda.png">
+    <link href="assets/img/btn-derecha.png">
     <link href="assets/img/footer.png">    
     <link href="assets/svg/Accesos.svg">    
-    <link href="assets/svg/Boton-izquierda.svg">    
-    <link href="assets/svg/Boton-derecha.svg">    
 </head>
 <body>
 <?php

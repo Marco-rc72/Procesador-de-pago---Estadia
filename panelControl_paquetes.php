@@ -22,22 +22,25 @@ include ('config/database.php');
             <tr>
                 <th>#Paquete</th>
                 <th>Nombre del paquete</th>
-                <th>Detalles del paquete</th>
+                <th>detalles</th>
                 <th>Precio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $consulta = "SELECT * FROM package";
+            $consulta = "SELECT p.name_package, p.price, b.name_benefits 
+            FROM package p JOIN package_benefits pb ON p.id_package = pb.id_package 
+            JOIN benefits b ON b.id_benefits = pb.id_benefits;";    
             $resultado = mysqli_query($conn, $consulta);
 
-            while ($fila = mysqli_fetch_array($resultado)) { ?>
+            while ($fila = mysqli_fetch_array($resultado)) { 
+                ?>
             <tr>
-                <td><?php echo $fila['id_package'] ?></td>
+                <td class="counter"></td>
                 <td><?php echo $fila['name_package'] ?></td>
-                <td><?php echo $fila['details_package'] ?></td>
-                <td><?php echo $fila['price'] ?></td>                
+                <td><?php echo $fila['name_benefits'] ?></td>
+                <td><?php echo $fila['price'] ?></td>
                 <td>
                     <div>
                         <a href="">Mostrar</a>
@@ -49,5 +52,6 @@ include ('config/database.php');
             <?php } ?>
         </tbody>
     </table>
+<script src="js\counter.js"></script>
 </body>
 </html>
