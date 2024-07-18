@@ -16,7 +16,10 @@ include ('config/database.php');
     include 'includes/navbar.php';
     ?>
     <h1>Tabla Paquetes</h1>
-    <p class="boton-agregar"><a href="">Agregar</a></p>
+    <div class="contenedor-boton">
+        <p class="boton-agregar"><a href="insertForm_package.php">Agregar paquete</a></p>
+        <p class="boton-agregar"><a href="insertForm_benefits.php">Agregar beneficio</a></p>
+    </div>
     <table>
         <thead>
             <tr>

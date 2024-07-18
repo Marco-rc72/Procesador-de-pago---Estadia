@@ -69,9 +69,17 @@ main {
 h1 {
     text-align: center;
 }
-
-.boton-agregar {
+.contenedor-boton{
+    display: flex;
+    flex-direction: row;
+}
+.boton-agregar:nth-child(1) {
     margin-left: 14%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.boton-agregar:nth-child(2) {
+    margin-left: 3%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -85,6 +93,16 @@ h1 {
     text-align: center;
     text-decoration: none;
 }
+
+/* .boton-redir {
+    background-color: #006699;
+    font-size: 21px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+} */
 
 .contenedor {
     max-width: 1300px;
@@ -144,6 +162,57 @@ table a:nth-child(3) {
 }
 table a:hover {
     background-color: black;
+}
+
+form {
+    width: 400px;
+    background: #f0f0f0;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+}
+
+form h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form .inputs {
+    width: 90%;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #006699;
+}
+
+.selection {
+    width: 90%;
+    min-height: 140px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #006699;
+}
+form label {
+    font-size: 19px;
+}
+.selection option {
+    font-size: 18px;
+    color: black;
+}
+
+form .boton {
+    width: 100%;
+    background: #006699;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
 }
 
 footer {
