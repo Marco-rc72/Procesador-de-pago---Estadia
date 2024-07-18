@@ -12,33 +12,35 @@
     <?php
     include 'includes/navbar.php';
     ?>
-    <h1>Tabla Facturas</h1>
-    <p class="boton-agregar"><a href="">Agregar</a></p>
-    <div class="contenedor">
-        <table>
-            <tr>
-                <th>#Factura</th>
-                <th>Fecha</th>
-                <th>#Paquete</th>
-                <th>#Usuario</th>
-                <th>#Metodo de pago</th>
-                <th>Acciones</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>7-07-2024</td>
-                <td>1</td>
-                <td>1</td>
-                <td>2</td>
-                <td>
-                    <div>
-                        <a href="">Mostrar</a>
-                        <a href="">Actualizar</a>
-                        <a href="">Eliminar</a>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <h1>Tabla Facturas</h1>
+        <div class="contenedor">
+            <table>
+                <tr>
+                    <th>#Factura</th>
+                    <th>Fecha</th>
+                    <th>#Paquete</th>
+                    <th>#Usuario</th>
+                    <th>#Metodo de pago</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>7-07-2024</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>
+                        <div>
+                            <a href="">Mostrar</a>
+                            <a href="">Actualizar</a>
+                            <a href="">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <?php
+include 'includes/footer.php';
+?>
 </body>
 </html>

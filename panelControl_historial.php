@@ -13,7 +13,6 @@
     include 'includes/navbar.php';
     ?>
     <h1>Historial</h1>
-    <p class="boton-agregar"><a href="">Agregar</a></p>
     <table>
         <tr>
             <th>#Pago</th>
@@ -34,5 +33,8 @@
             </td>
         </tr>
     </table>
+<?php
+include 'includes/footer.php';
+?>
 </body>
 </html>

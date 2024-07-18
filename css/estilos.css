@@ -5,7 +5,7 @@ body {
     background-color: #f0f0f0;
 }
 
-header, footer {
+footer {
     background-color: #006699;
     color: white;
     text-align: center;
@@ -14,8 +14,10 @@ header, footer {
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
 }
 
 footer img {
@@ -42,6 +44,14 @@ li {
 
 .espacio {
     margin: 3% 0 0 10%;
+}
+
+.espacio p {
+    font-size: 20px;
+}
+
+.espacio b {
+    font-size: 24px;
 }
 
 .tabla {
@@ -104,8 +114,9 @@ th {
     cursor: pointer;
     transition: 0.1s;
 }
+
 .boton a {
-    text-decoration: none;    
+    text-decoration: none;
     color: white;
 }
 
@@ -124,7 +135,8 @@ th {
 
 .acceso {
     flex: 0;
-    margin-left: 3%;
+    top: 30%;
+    margin-left: 1%;
     position: fixed;
     z-index: 1;
 }
@@ -138,7 +150,7 @@ th {
     width: 40px;
     height: 40px;
     position: absolute;
-    left: 150px;
+    right: 85%;
     top: 600px;
     cursor: pointer;
     transition: 0.1s;
@@ -149,7 +161,7 @@ th {
     width: 40px;
     height: 40px;
     position: absolute;
-    right: 120px;
+    left: 85%;
     top: 600px;
     cursor: pointer;
     transition: 0.1s;
@@ -180,15 +192,16 @@ th {
     flex-direction: row;
 }
 
-p {
+table p {
     font-weight: bold;
 }
+
 .slider {
     display: flex;
     margin-bottom: 40%;
     width: 50%;
     height: 1100px;
-    margin-left: -300px;
+    margin-left: -370px;
 }
 
 footer {

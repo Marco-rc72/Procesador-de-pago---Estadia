@@ -9,12 +9,12 @@ slider.insertAdjacentElement('afterbegin', sliderTablaLast);
 
 function Siguiente() {
     let sliderTablaPrim = document.querySelectorAll(".tabla")[0];
-    slider.style.marginLeft = "-600px";
+    slider.style.marginLeft = "-740px";
     slider.style.transition = "all 0.25s";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement('beforeend', sliderTablaPrim);
-        slider.style.marginLeft = "-300px";
+        slider.style.marginLeft = "-370px";
     }, 250)
 }
 
@@ -26,7 +26,7 @@ function Anterior() {
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement('afterbegin', sliderTablaLast);
-        slider.style.marginLeft = "-300px";
+        slider.style.marginLeft = "-370px";
     }, 250)
 }
 
