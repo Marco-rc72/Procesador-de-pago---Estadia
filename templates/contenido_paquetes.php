@@ -23,7 +23,6 @@
                                 include ('config/database.php');
                                 $consulta = "SELECT * FROM package";
                                 $resultado = mysqli_query($conn, $consulta);
-
                                 while ($fila = mysqli_fetch_array($resultado)) { ?>
                                 <tr class="info-carta">
                                     <td> 
@@ -47,29 +46,18 @@
                             </tbody>
                         </table>
                         <table class="tabla">
+                            <?php  foreach($resultado as $row) { ?>
                             <tr >
-                                <th class="cabeza-carta">Básico Plus</th>
+                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
                             </tr>
                             <tr class="titulo-carta">
-                                <td>199.99</td>
+                                <td><?php echo $row['price'];?></td>
                             </tr>
                             <tr class="info-carta">
                                 <td>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p><b>Nombre</b></p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Teléfono</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Dirección</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Niveles</p>
+                                        <p><b><?php echo $row['id_package_benefits'];?></b></p>
                                     </div>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
@@ -82,10 +70,11 @@
                                 <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
+                            <?php } ?>
                         </table>
                         <table class="tabla">
                             <tr >
-                                <th class="cabeza-carta">Lite</th>
+                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
                             </tr>
                             <tr class="titulo-carta">
                                 <td>399.99</td>
@@ -94,7 +83,7 @@
                             <td>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Nombre</p>
+                                        <p><?php echo $row['id_package_benefits'];?></p>
                                     </div>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
