@@ -74,7 +74,7 @@ h1 {
     flex-direction: row;
 }
 .boton-agregar:nth-child(1) {
-    margin-left: 14%;
+    margin-left: 21%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -98,16 +98,6 @@ h1 {
     background: #d0d0d0;
     color: black;
 }
-
-/* .boton-redir {
-    background-color: #006699;
-    font-size: 21px;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-} */
 
 .contenedor {
     max-width: 1300px;
@@ -157,13 +147,13 @@ table a {
 }
 
 table a:nth-child(1) {
-    background-color: #3b7fd2;
-}
-table a:nth-child(2) {
     background-color: #51c73a;
 }
-table a:nth-child(3) {
+table a:nth-child(2) {
     background-color: #dc4242;
+}
+table a:nth-child(3) {
+    background-color: #3b7fd2;
 }
 table a:hover {
     background-color: black;

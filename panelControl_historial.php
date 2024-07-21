@@ -26,9 +26,9 @@
             <td>1</td>
             <td>
                 <div>
-                    <a href="">Mostrar</a>
                     <a href="">Actualizar</a>
                     <a href="">Eliminar</a>
+                    <a href="">Mostrar</a>
                 </div>
             </td>
         </tr>

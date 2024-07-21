@@ -43,6 +43,6 @@ if ($conn->query($sqlInsertBeneficios) === FALSE) {
 
 
 // Redirect to insertForm_package.php (optional)
-header('insertForm_package.php'); // Adjust the redirect path if needed
+header('Location: ../../panelControl_paquetes.php');
 
 ?>

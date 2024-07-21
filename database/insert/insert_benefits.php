@@ -10,5 +10,6 @@ $consulta = "INSERT INTO benefits (name_benefits) VALUE ('$nombreBeneficio')";
 
 $resultado = mysqli_query($conn, $consulta);
 
-header('insertForm_benefits.php');
+header('Location: ../../panelControl_beneficios.php');
+
 ?>

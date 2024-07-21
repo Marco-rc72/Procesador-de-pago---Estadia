@@ -4,6 +4,7 @@
         </div>
         <div class="separador">
             <a href="panelControl_paquetes.php">Paquetes</a>
+            <a href="panelControl_beneficios.php">Beneficios</a>
             <a href="panelControl_historial.php">Historial</a>
             <a href="panelControl_factura.php">Facturas</a>
         </div>
