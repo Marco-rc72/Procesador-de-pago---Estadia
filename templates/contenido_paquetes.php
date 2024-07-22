@@ -1,335 +1,67 @@
 <main class="main">
-        <div class="espacio" >
-            <p>Paso 1 de 3</p>
-            <b>Selecciona el plan ideal para ti</b>
-            <p>Cambia a un plan inferior o superior en cualquier momento</p>
-        </div>
-        <img class="acceso" src="assets/svg/Accesos.svg" alt="Ejemplo de redescuelas">
-        <div class="contenedor">
-            <div class="contenedor-slider">
-                    <img class="boton-izquierda" id="btn-izquierda" src="assets/img/btn-izquierda.png" alt="Verificado">
-                    <div class="slider" id="slider">
-                        <table class="tabla">
-                            <thead>
-                                <tr>
-                                    <th class="cabeza-carta">Básico</th>
-                                </tr>
-                                <tr class="titulo-carta">
-                                    <td>GRATIS</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                include ('config/database.php');
-                                $consulta = "SELECT * FROM package";
-                                $resultado = mysqli_query($conn, $consulta);
-                                while ($fila = mysqli_fetch_array($resultado)) { ?>
-                                <tr class="info-carta">
-                                    <td> 
+    <div class="espacio">
+        <p>Paso 1 de 3</p>
+        <b>Selecciona el plan ideal para ti</b>
+        <p>Cambia a un plan inferior o superior en cualquier momento</p>
+    </div>
+    <img class="acceso" src="assets/svg/Accesos.svg" alt="Ejemplo de redescuelas">
+    
+    <div class="contenedor">
+        <div class="contenedor-slider">
+            <img class="boton-izquierda" id="btn-izquierda" src="assets/img/btn-izquierda.png" alt="Anterior">
+            <div class="slider" id="slider">
+                <?php
+                include('config/database.php');
+                $consulta = "SELECT * FROM package";
+                $resultado = mysqli_query($conn, $consulta);
+                
+                while ($fila = mysqli_fetch_assoc($resultado)) {
+                    $id_package = intval($fila['id_package']);
+                    $name_package = htmlspecialchars($fila['name_package'], ENT_QUOTES, 'UTF-8');
+                    $price = htmlspecialchars($fila['price'], ENT_QUOTES, 'UTF-8');
+                    ?>
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th class="cabeza-carta"><?php echo $name_package; ?></th>
+                            </tr>
+                            <tr class="titulo-carta">
+                                <td>$<?php echo $price; ?></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="info-carta">
+                                <td>
+                                    <?php
+                                    $consulta_beneficios = "
+                                        SELECT benefits.name_benefits 
+                                        FROM package_benefits 
+                                        INNER JOIN benefits ON package_benefits.id_benefits = benefits.id_benefits 
+                                        WHERE package_benefits.id_package = $id_package";
+                                    $resultado_beneficios = mysqli_query($conn, $consulta_beneficios);
+                                    
+                                    while ($beneficio = mysqli_fetch_assoc($resultado_beneficios)) {
+                                        $name_benefit = htmlspecialchars($beneficio['name_benefits'], ENT_QUOTES, 'UTF-8');
+                                        ?>
                                         <div class="contenedor-flex">
                                             <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                            <p><?php echo $fila['name_package'] ?></p>
+                                            <p><?php echo $name_benefit; ?></p>
                                         </div>
-                                        <!-- <div class="contenedor-flex">
-                                            <img class="check" src="assets/svg/check.svg" alt="Verificado">
-                                            <p>Portada de Default</p>
-                                        </div> -->
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                                <tr class="boton-carta">
-                                <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
-                                </td>
-                                </tr>
-                                    
-                            </tbody>
-                        </table>
-                        <table class="tabla">
-                            <?php  foreach($resultado as $row) { ?>
-                            <tr >
-                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td><?php echo $row['price'];?></td>
-                            </tr>
-                            <tr class="info-carta">
-                                <td>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p><b><?php echo $row['id_package_benefits'];?></b></p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
+                                        <?php
+                                    }
+                                    ?>
                                 </td>
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                    <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
                                 </td>
                             </tr>
-                            <?php } ?>
-                        </table>
-                        <table class="tabla">
-                            <tr >
-                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>399.99</td>
-                            </tr>
-                            <tr class="info-carta">
-                            <td>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p><?php echo $row['id_package_benefits'];?></p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Teléfono</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Direcció</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Niveles</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Formulario de contacto</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Imagen de Búsqueda y Logo</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Mapa Básico</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Apuntado en Mapa Personalizado</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
-                                <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="tabla">
-                            <tr >
-                                <th class="cabeza-carta">Lite Plus</th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>599.99</td>
-                            </tr>
-                            <tr class="info-carta">
-                            <td>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Nombre</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Teléfono</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Direcció</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Niveles</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Formulario de contacto</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Imagen de Búsqueda y Logo</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Mapa Básico</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Apuntado en Mapa Personalizado</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Links a Redes Sociales y Web</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
-                                <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="tabla">
-                            <tr >
-                                <th class="cabeza-carta">MKTGOLD</th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>999.99</td>
-                            </tr>
-                            <tr class="info-carta">
-                            <td>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Nombre</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Teléfono</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Dirección</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Niveles</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Formulario de contacto</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Imagen de Búsqueda y Logo</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Mapa Básico</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Apuntado en Mapa Personalizado</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Links a Redes Sociales y Web</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Vista de Promocionesy Avisos</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Vizualización de Video</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Análisis de Redes Sociales</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
-                                <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="tabla">
-                            <tr >
-                                <th class="cabeza-carta">MKTZOOM</th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>COTIZAR</td>
-                            </tr>
-                            <tr class="info-carta">
-                            <td>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Nombre</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Teléfono</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Direcció</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Niveles</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Portada de Default</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Formulario de contacto</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Imagen de Búsqueda y Logo</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Mapa Básico</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Apuntado en Mapa Personalizado</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Links a Redes Sociales y Web</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Vista de Promocionesy Avisos</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Vizualización de Video</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Análisis de Redes Sociales</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Galería de Imágenes</p>
-                                    </div>
-                                    <div class="contenedor-flex">
-                                        <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p>Mapa 360°</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
-                                <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <img class="boton-derecha" id="btn-derecha" src="assets/img/btn-derecha.png" alt="Verificado">
+                        </tbody>
+                    </table>
+                <?php } ?>
             </div>
-        </div>  
+            <img class="boton-derecha" id="btn-derecha" src="assets/img/btn-derecha.png" alt="Siguiente">
+        </div>
+    </div>
 </main>
