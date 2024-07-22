@@ -107,6 +107,7 @@ h1 {
 table {
     margin: auto;
     border-collapse: collapse;
+    margin-bottom: 100px;
 }
 
 table th,
@@ -202,6 +203,15 @@ form label {
 
 form .boton {
     width: 100%;
+    background: #006699;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+form a .boton {
     background: #006699;
     border: none;
     padding: 12px;

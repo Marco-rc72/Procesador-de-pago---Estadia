@@ -15,8 +15,11 @@
 <body>
 <?php
 include 'templates/contenido_paquetes.php';
+include ('includes\form_client.php');
 include 'includes/footer.php';
 ?>
+
 <script src="js/slider.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>

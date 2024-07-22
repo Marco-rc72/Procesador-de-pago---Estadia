@@ -20,7 +20,7 @@ include ('config/database.php');
             <input name="name_benefits" class="inputs" type="text">
         </div>
         <button type="submit" class="boton">Agregar</button>
-        <button class="boton" onclick="window.history.back()">Cancel</button>
+        <a class="boton" onclick="window.history.back()">Cancel</a>
     </form>
 </body>
 </html>

@@ -20,7 +20,7 @@ include ('config/database.php');
         <p class="boton-agregar"><a href="insertForm_package.php">Agregar paquete</a></p>
         <p class="boton-agregar"><a href="insertForm_benefits.php">Agregar beneficio</a></p>
     </div>
-    <table>
+    <table class="">
         <thead>
             <tr>
                 <th>#Paquete</th>

@@ -32,7 +32,7 @@
         <input type="hidden" name="id_benefits" value="<?php echo $fila['id_benefits'] ?>">
         <br>
         <button type="submit" class="boton">Agregar</button>
-        <button class="boton" onclick="window.history.back()">Cancel</button>
+        <a class="boton" onclick="window.history.back()">Cancel</a>
     </form>
 </body>
 </html>

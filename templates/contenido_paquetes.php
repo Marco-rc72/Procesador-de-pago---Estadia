@@ -19,16 +19,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                include ('config/database.php');
-                                $consulta = "SELECT * FROM package";
-                                $resultado = mysqli_query($conn, $consulta);
-                                while ($fila = mysqli_fetch_array($resultado)) { ?>
                                 <tr class="info-carta">
                                     <td> 
                                         <div class="contenedor-flex">
                                             <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                            <p><?php echo $fila['name_package'] ?></p>
+                                            <p>ejemplo</p>
                                         </div>
                                         <!-- <div class="contenedor-flex">
                                             <img class="check" src="assets/svg/check.svg" alt="Verificado">
@@ -36,28 +31,26 @@
                                         </div> -->
                                     </td>
                                 </tr>
-                                <?php } ?>
                                 <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <div><a href="#" class="boton">Comprar</a></div>
                                 </td>
                                 </tr>
                                     
                             </tbody>
                         </table>
                         <table class="tabla">
-                            <?php  foreach($resultado as $row) { ?>
                             <tr >
-                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
+                                <th class="cabeza-carta">ola</th>
                             </tr>
                             <tr class="titulo-carta">
-                                <td><?php echo $row['price'];?></td>
+                                <td>ola nose</td>
                             </tr>
                             <tr class="info-carta">
                                 <td>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p><b><?php echo $row['id_package_benefits'];?></b></p>
+                                        <p><b>hhfdd</b></p>
                                     </div>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
@@ -67,14 +60,13 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <a href="#" class="boton">Comprar</a>
                                 </td>
                             </tr>
-                            <?php } ?>
                         </table>
                         <table class="tabla">
                             <tr >
-                                <th class="cabeza-carta"><?php echo $row['name_package'];?></th>
+                                <th class="cabeza-carta">NOSE</th>
                             </tr>
                             <tr class="titulo-carta">
                                 <td>399.99</td>
@@ -83,7 +75,7 @@
                             <td>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                        <p><?php echo $row['id_package_benefits'];?></p>
+                                        <p>gsrg</p>
                                     </div>
                                     <div class="contenedor-flex">
                                         <img class="check" src="assets/img/green-check.png" alt="Verificado">
@@ -121,7 +113,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <div><a href="#" class="boton">Comprar</a></div>
                                 </td>
                             </tr>
                         </table>
@@ -178,7 +170,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <div><a href="#" class="boton">Comprar</a></div>
                                 </td>
                             </tr>
                         </table>
@@ -247,7 +239,7 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <div><a href="#" class="boton">Comprar</a></div>
                                 </td>
                             </tr>
                         </table>
@@ -324,12 +316,12 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                <div><a href="#" class="boton">Comprar</a></div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <img class="boton-derecha" id="btn-derecha" src="assets/img/btn-derecha.png" alt="Verificado">
             </div>
-        </div>  
+        </div>
 </main>

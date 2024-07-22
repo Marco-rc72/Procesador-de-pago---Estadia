@@ -19,7 +19,6 @@ if($conn->query($consulta) === FALSE){
 
 $delRelacion = "DELETE FROM package_benefits WHERE id_package = '$idPaquete'";
 
-// Only execute DELETE if there's a package ID
 if ($idPaquete !== '') {
     if ($conn->query($delRelacion) === FALSE) {
         echo "Error eliminando asociaciones de beneficios existentes: " . $conn->error;
@@ -27,7 +26,6 @@ if ($idPaquete !== '') {
     }
 }
 
-// Prepare the INSERT statement for new benefit associations
 $relacion = "INSERT INTO package_benefits (id_package, id_benefits) VALUES ";
 $primIngresado = true;
 
@@ -39,15 +37,13 @@ foreach ($idBeneficios as $idBeneficio) {
     $primIngresado = false;
 }
 
-// Execute the INSERT statement for new benefit associations
-if (count($idBeneficios) > 0) { // Check if there are benefits to insert
+if (count($idBeneficios) > 0) { 
     if ($conn->query($relacion) === FALSE) {
         echo "Error actualizando asociaciones de beneficios: " . $conn->error;
         exit;
     }
 }
 
-// Success message (optional)
 echo "Paquete actualizado exitosamente!";
 
 header('Location: ../../panelControl_paquetes.php');

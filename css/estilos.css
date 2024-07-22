@@ -41,7 +41,7 @@ ul {
 li {
     display: inline-block;
 }
-
+/* Vista paquetes */
 .espacio {
     margin: 3% 0 0 10%;
 }
@@ -52,6 +52,14 @@ li {
 
 .espacio b {
     font-size: 24px;
+}
+
+.acceso {
+    flex: 0;
+    top: 30%;
+    margin-left: 1%;
+    position: fixed;
+    z-index: 1;
 }
 
 .tabla {
@@ -79,8 +87,6 @@ th {
     color: #006699;
     text-align: center;
 }
-
-
 
 .titulo-carta {
     height: 90px;
@@ -111,13 +117,10 @@ th {
     padding: 20px 30px;
     text-align: center;
     display: inline-block;
-    cursor: pointer;
-    transition: 0.1s;
-}
-
-.boton a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
 .boton:hover {
@@ -133,13 +136,7 @@ th {
     height: 25px;
 }
 
-.acceso {
-    flex: 0;
-    top: 30%;
-    margin-left: 1%;
-    position: fixed;
-    z-index: 1;
-}
+
 
 .contenedor {
     display: flex;
@@ -203,7 +200,68 @@ table p {
     height: 1100px;
     margin-left: -370px;
 }
+/* fin apartado cartas de los paquetes */
+/* Inicio apartado Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+}
 
+.modal-show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.modal_container{
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+}
+
+.modal_container_title {
+    width: 90%;
+    background-color: #006699;
+}
+
+.modal_title {
+    text-align: center;
+    color: #f0f0f0;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.modal_close{
+    text-decoration: none;
+    color: #f0f0f0;
+    background-color: #006699;
+    padding: 1em 3em;
+    border: 1px solid #006699;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color .3s;
+}
+
+.modal_close:hover{
+    color: #006699;
+    background-color: #f0f0f0;
+}
+
+/* fin apartado Modal */
 footer {
     background-color: #006699;
     color: white;
@@ -404,3 +462,4 @@ textarea.CVV {
     display: flex;
     align-items: center;
 }
+
