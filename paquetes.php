@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php
-include 'templates/contenido_paquetes.php';
+include 'templates/index.php';
 include 'includes/footer.php';
 ?>
 <script src="js/slider.js"></script>

@@ -1,14 +1,5 @@
 <main>
     <div class="column-container">
-        <?php
-        include('config/database.php');
-        $consulta = "SELECT * FROM package";
-        $resultado = mysqli_query($conn, $consulta);
-        
-        while ($fila = mysqli_fetch_array($resultado)) {
-            $packageName = $fila['name_package'];
-            $packagePrice = $fila['price'];
-        ?>
         <div class="column">
             <h2>Elige tu forma de pago</h2>
             
@@ -26,22 +17,21 @@
                         label: 'pay'
                     },
                     createOrder: function(data, actions) {
+                        const packageData = JSON.parse(localStorage.getItem('selectedPackage'));
                         return actions.order.create({
                             purchase_units: [{
                                 amount: {
-                                    value: <?php echo $packagePrice; ?>  // Use PHP variable here
+                                    value: packageData.price
                                 }
                             }]
                         });
                     },
-
                     onApprove: function(data, actions) {
-                        actions.order.capture().then(function(detalles) {
+                        return actions.order.capture().then(function(detalles) {
                             alert("¡Gracias por su pago!");
-                            window.location.href = "paquetes.php";
+                            console.log(detalles);
                         });
                     },
-
                     onCancel: function(data) {
                         alert("Pago cancelado");
                         console.log(data);
@@ -62,13 +52,24 @@
             </div>
         </div>
         
-        <div class="column">
-            <h2>Resumen de tu compra</h2>
-            <hr class="separacion">
-            <h3 class="precio"><?php echo $packageName; ?> $<?php echo number_format($packagePrice, 2); ?></h3>
-            <hr class="separacion">
-            <h3 class="precio">Pagarás $<?php echo number_format($packagePrice, 2); ?></h3>
+        <div id="summary" class="column">
+            <h2>Resumen de Compra</h2>
+            <div class="line"></div>
+            <h3>Paquete: <span id="packageName"></span></h3>
+            <div class="line"></div>
+            <h3>Precio: <span id="packagePrice"></span></h3>
+            <div class="line"></div>
         </div>
-        <?php } ?>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Recuperar los datos del paquete seleccionado
+        const packageData = JSON.parse(localStorage.getItem('selectedPackage'));
+        if (packageData) {
+            document.getElementById('packageName').innerText = packageData.name;
+            document.getElementById('packagePrice').innerText = '$' + parseFloat(packageData.price).toFixed(2);
+        }
+    });
+    </script>
 </main>

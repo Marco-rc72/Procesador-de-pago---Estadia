@@ -54,7 +54,11 @@
                             </tr>
                             <tr class="boton-carta">
                                 <td>
-                                    <div><p class="boton"><a href="metodo_de_pago.php">Comprar</a></p></div>
+                                    <div>
+                                        <p class="boton">
+                                            <a href="#" onclick="addPackage(<?php echo $id_package; ?>, '<?php echo $name_package; ?>', '<?php echo $price; ?>')">Comprar</a>
+                                        </p>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -65,3 +69,12 @@
         </div>
     </div>
 </main>
+
+<script>
+function addPackage(id, name, price) {
+    // Guardar los datos en localStorage
+    localStorage.setItem('selectedPackage', JSON.stringify({ id, name, price }));
+    // Redirigir a la página de método de pago
+    window.location.href = 'metodo_de_pago.php';
+}
+</script>
