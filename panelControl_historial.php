@@ -1,3 +1,7 @@
+<?php
+include ('config/database.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,26 +16,31 @@
     <?php
     include 'includes/navbar.php';
     ?>
-    <h1>Historial</h1>
+    <h1>Compra</h1>
     <table>
         <tr>
-            <th>#Pago</th>
+            <th>Id_transaccion</th>
             <th>Fecha</th>
-            <th>#Factura</th>
-            <th>Acciones</th>
+            <th>Status</th>
+            <th>Correo electronico</th>
+            <th>Id_Cliente</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>7-07-2024</td>
-            <td>1</td>
-            <td>
-                <div>
-                    <a href="">Actualizar</a>
-                    <a href="">Eliminar</a>
-                    <a href="">Mostrar</a>
-                </div>
-            </td>
-        </tr>
+        <tbody>
+            <?php
+            $consulta = "SELECT * FROM compra";    
+            $resultado = mysqli_query($conn, $consulta);
+
+            while ($fila = mysqli_fetch_array($resultado)) { 
+                ?>
+            <tr>
+                <td><?php echo $fila['id_transaccion'] ?></td>
+                <td><?php echo $fila['fecha'] ?></td>
+                <td><?php echo $fila['status'] ?></td>
+                <td><?php echo $fila['email'] ?></td>
+                <td><?php echo $fila['id_client'] ?></td>
+            </tr>
+            <?php } ?>
+        </tbody>
     </table>
 <?php
 include 'includes/footer.php';

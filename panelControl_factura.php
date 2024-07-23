@@ -1,3 +1,7 @@
+<?php
+include ('config/database.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,31 +16,28 @@
     <?php
     include 'includes/navbar.php';
     ?>
-        <h1>Tabla Facturas</h1>
+        <h1>Tabla Detalle de la compra</h1>
         <div class="contenedor">
             <table>
                 <tr>
-                    <th>#Factura</th>
-                    <th>Fecha</th>
-                    <th>#Paquete</th>
-                    <th>#Usuario</th>
-                    <th>#Metodo de pago</th>
-                    <th>Acciones</th>
+                    <th>Id_compra</th>
+                    <th>Nombre del paquete</th>
+                    <th>Precio</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>7-07-2024</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>
-                        <div>
-                            <a href="">Actualizar</a>
-                            <a href="">Eliminar</a>
-                            <a href="">Mostrar</a>
-                        </div>
-                    </td>
-                </tr>
+                <tbody>
+            <?php
+            $consulta = "SELECT * FROM detalle_compra";    
+            $resultado = mysqli_query($conn, $consulta);
+
+            while ($fila = mysqli_fetch_array($resultado)) { 
+                ?>
+            <tr>
+                <td><?php echo $fila['id_compra'] ?></td>
+                <td><?php echo $fila['name_package'] ?></td>
+                <td><?php echo $fila['price'] ?></td>
+            </tr>
+            <?php } ?>
+        </tbody>
             </table>
         </div>
     <?php

@@ -21,8 +21,8 @@ include ('config/database.php');
     <table>
         <thead>
             <tr>
-                <th>#Paquete</th>
-                <th>Nombre del paquete</th>
+                <th>#Beneficios</th>
+                <th>Nombre del Beneficio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
