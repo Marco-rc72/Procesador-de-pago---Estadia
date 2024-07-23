@@ -14,8 +14,8 @@
 </head>
 <body>
 <?php
-include 'templates/contenido_paquetes.php';
-include ('includes\form_client.php');
+include 'templates/index.php';
+include ('includes/form_client.php');
 include 'includes/footer.php';
 ?>
 
