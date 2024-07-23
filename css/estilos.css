@@ -41,6 +41,7 @@ ul {
 li {
     display: inline-block;
 }
+
 /* Vista paquetes */
 .espacio {
     margin: 3% 0 0 10%;
@@ -200,9 +201,10 @@ table p {
     height: 1100px;
     margin-left: -370px;
 }
+
 /* fin apartado cartas de los paquetes */
 /* Inicio apartado Modal */
-.modal{
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -210,17 +212,17 @@ table p {
     bottom: 0;
     background-color: #111111bd;
     display: flex;
-    opacity: 0;
+    opacity: 1;
     z-index: 2;
-    pointer-events: none;
+    pointer-events: unset;
 }
 
-.modal-show{
+.modal-show {
     opacity: 1;
     pointer-events: unset;
 }
 
-.modal_container{
+.modal_container {
     margin: auto;
     width: 90%;
     max-width: 800px;
@@ -231,7 +233,7 @@ table p {
     display: grid;
     gap: 1em;
     place-items: center;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .modal_container_title {
@@ -246,12 +248,28 @@ table p {
     text-transform: uppercase;
 }
 
+.modal_container_input {
+    max-width: 90%;
+}
+
+.modal_container_inputs {
+    display: flex;
+    flex-direction: row;
+    /* Organiza los elementos en una fila */
+    align-items: center;
+    /* Alinea los elementos verticalmente */
+}
+
+.container_label_input {
+    margin-inline: 10px;
+}
+
 .label_input {
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
-    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     box-sizing: border-box;
-    display: block;
+    display: inline-block;
     margin: 0;
     border: 0;
     line-height: 20px;
@@ -260,7 +278,24 @@ table p {
     transform: translateY(30px);
     cursor: pointer;
     font-size: 16px;
-    font-family: inherit;
+    font-weight: 400;
+    color: #888888;
+}
+.label_textarea {
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    margin-left: 20px;
+    border: 0;
+    line-height: 20px;
+    pointer-events: none;
+    transition: .2s linear;
+    transform: translateY(30px);
+    cursor: pointer;
+    font-size: 16px;
     font-weight: 400;
     color: #888888;
 }
@@ -269,36 +304,68 @@ table p {
     font: inherit;
     border: 1px solid #e2e8f0;
     width: 100%;
-    min-width: 80%;
-    max-width: 90%;
+    min-width: unset;
+    max-width: unset;
     height: auto;
     min-height: unset;
     max-height: unset;
-    display: block;
+    display: inline-block;
     margin: 0;
     padding: 10px 0 9px;
     border-width: 0;
     border-bottom-width: 1px;
     border-style: solid;
-    border-radius: 0;
-    background-color: rgba(0,0,0,0)!important;
+    background-color: rgba(0, 0, 0, 0) !important;
     background-image: unset;
     line-height: 1.3em;
     transition: .2s ease;
-    outline: 0;
-    box-shadow: none;
     border-color: #777771;
     color: #000000;
     font-size: 16px;
-    font-family: inherit;
     font-weight: 400;
+}
+
+section p {
+    text-align: inherit;
+}
+
+.modal_container_textarea {
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+section .form-control {
+    border: 1px solid #e2e8f0;
+    height: auto;
+    background: #F9FAFB;
+    width: 100%;
+    display: block;
+    padding: 0 9px 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    line-height: 20px;
+    transition: .2s ease;
+    border-color: #777771;
+    background-color: transparent;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 140px;
+    min-width: 700px;
+    padding-top: 29px;
+}
+
+.modal_checkbox{
+    margin-inline: 20px;
 }
 
 .boton_insercion {
     font: inherit;
-    text-transform: none;
     background: #e6e6e6;
-    box-sizing: border-box;
     width: auto;
     min-width: 100px;
     max-width: unset;
@@ -311,7 +378,7 @@ table p {
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 10px;
-    border: 0;
+    border: 1px solid #94c93d;
     border-radius: 2px;
     line-height: 1.45em;
     text-align: center;
@@ -324,7 +391,12 @@ table p {
     color: #FFFFFF;
 }
 
-.modal_close{
+.boton_insercion:hover{
+    color: #0ba72d;
+    background-color: #f0f0f0;
+}
+
+.modal_close {
     text-decoration: none;
     color: #f0f0f0;
     background-color: #006699;
@@ -335,7 +407,7 @@ table p {
     transition: background-color .3s;
 }
 
-.modal_close:hover{
+.modal_close:hover {
     color: #006699;
     background-color: #f0f0f0;
 }
@@ -437,20 +509,18 @@ header img {
     object-fit: contain;
 }
 
+/* 
 textarea {
     width: 100%;
     max-width: 450px;
-    /* Ajusta el ancho máximo según sea necesario */
     height: 15px;
-    /* Ajusta la altura según sea necesario */
     padding: 10px;
     font-size: 16px;
     border: 2px solid #000000;
     border-radius: 3px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     resize: horizontal;
-    /* Permitir solo el redimensionamiento vertical */
-}
+} */
 
 .exp-container {
     display: flex;

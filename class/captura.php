@@ -1,19 +1,6 @@
 <?php
 
-// Configuración de conexión a la base de datos
-$servidor = "localhost";
-$usuario = "root";
-$password = "";
-$base_datos = "procesador_pago";
-
-// Crear conexión
-$conn = new mysqli($servidor, $usuario, $password, $base_datos);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-$conn->set_charset("utf8");
+include('../config\database.php');
 
 // Captura de datos desde PayPal
 $json = file_get_contents('php://input');
@@ -31,7 +18,7 @@ if (is_array($datos)) {
     // Preparar y ejecutar la consulta
     $sql = $conn->prepare("INSERT INTO compra (id_transaccion, fecha, status, email, id_client, total) VALUES (?, ?, ?, ?, ?, ?)");
     $sql->bind_param("sssssd", $id_transaccion, $fecha_nueva, $status, $email, $id_client, $monto);
-   
+    
     if ($sql->execute()) {
         echo json_encode(['status' => 'success']);
     } else {
