@@ -10,33 +10,52 @@
             </script>
             <div id="paypal-button-container" class="img-container"></div>
             <script>
-                paypal.Buttons({
-                    style: {
-                        color: 'blue',
-                        shape: 'pill',
-                        label: 'pay'
-                    },
-                    createOrder: function(data, actions) {
-                        const packageData = JSON.parse(localStorage.getItem('selectedPackage'));
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: packageData.price
-                                }
-                            }]
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(detalles) {
-                            alert("¡Gracias por su pago!");
-                            console.log(detalles);
-                        });
-                    },
-                    onCancel: function(data) {
-                        alert("Pago cancelado");
-                        console.log(data);
-                    }
-                }).render('#paypal-button-container');
+paypal.Buttons({
+    style: {
+        color: 'blue',
+        shape: 'pill',
+        label: 'pay'
+    },
+    createOrder: function(data, actions) {
+        const packageData = JSON.parse(localStorage.getItem('selectedPackage'));
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: packageData.price
+                }
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(detalles) {
+            return fetch('class/captura.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    detalles: detalles
+                })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    window.location.href = "paquetes.php";
+                } else {
+                    console.error('Error al insertar datos:', result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar datos:', error);
+            });
+        });
+    },
+    onCancel: function(data) {
+        alert("Pago cancelado");
+        console.log(data);
+    }
+}).render('#paypal-button-container');
+
             </script>
             
             <!-- Payment Methods -->
