@@ -34,7 +34,8 @@ paypal.Buttons({
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    detalles: detalles
+                    detalles: detalles,
+                    namePackage: JSON.parse(localStorage.getItem('selectedPackage')).name // Enviar el nombre del paquete
                 })
             })
             .then(response => response.json())
@@ -55,6 +56,7 @@ paypal.Buttons({
         console.log(data);
     }
 }).render('#paypal-button-container');
+
 
             </script>
             
