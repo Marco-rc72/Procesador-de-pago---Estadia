@@ -9,24 +9,24 @@ slider.insertAdjacentElement('afterbegin', sliderTablaLast);
 
 function Siguiente() {
     let sliderTablaPrim = document.querySelectorAll(".tabla")[0];
-    slider.style.marginLeft = "-740px";
+    slider.style.transform = "translateX(-740px)";
     slider.style.transition = "all 0.25s";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement('beforeend', sliderTablaPrim);
-        slider.style.marginLeft = "-370px";
+        slider.style.transform = "translateX(-370px)";
     }, 250)
 }
 
 function Anterior() {
     let sliderTabla = document.querySelectorAll(".tabla");
     let sliderTablaLast = sliderTabla[sliderTabla.length - 1];
-    slider.style.marginLeft = "0";
+    slider.style.transform = "translateX(0)";
     slider.style.transition = "all 0.25s";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement('afterbegin', sliderTablaLast);
-        slider.style.marginLeft = "-370px";
+        slider.style.transform = "translateX(-370px)";
     }, 250)
 }
 

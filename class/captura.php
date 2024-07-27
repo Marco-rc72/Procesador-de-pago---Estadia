@@ -22,19 +22,22 @@ if (is_array($datos)) {
     $sql = $conn->prepare("INSERT INTO compra (id_transaccion, fecha, status, email, id_client, total) VALUES (?, ?, ?, ?, ?, ?)");
     $sql->bind_param("sssssd", $id_transaccion, $fecha_nueva, $status, $email, $id_client, $monto);
 
+    
     if ($sql->execute()) {
         // Obtener el último id de compra insertado
         $id_compra = $conn->insert_id;
-
+        
         // Preparar y ejecutar la consulta para insertar en detalle_compra
         $sql_detalle = $conn->prepare("INSERT INTO detalle_compra (id_compra, name_package, price) VALUES (?, ?, ?)");
         $sql_detalle->bind_param("isd", $id_compra, $name_package, $monto);
-
+        
+        
         if ($sql_detalle->execute()) {
             echo json_encode(['status' => 'success']);
         } else {
             echo json_encode(['status' => 'error', 'message' => $sql_detalle->error]);
         }
+    // include ('enviar_email.php');
     } else {
         echo json_encode(['status' => 'error', 'message' => $sql->error]);
     } 

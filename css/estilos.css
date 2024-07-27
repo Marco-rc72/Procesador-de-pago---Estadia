@@ -15,9 +15,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Centrar horizontalmente */
     align-items: center;
-    /* Centrar verticalmente */
 }
 
 footer img {
@@ -63,6 +61,15 @@ li {
     z-index: 1;
 }
 
+.contenedor-tabla {
+    display: flex;
+    align-items: center;
+}
+.tabla-wrapper{
+    display: flex;
+    align-items: center;
+}
+
 .tabla {
     margin-top: 3%;
     margin-inline: 10px;
@@ -71,13 +78,15 @@ li {
 }
 
 table {
+    max-height: 60%;
     border-radius: 50px;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    transition: 0.3s;
 }
 
 th {
-    /* background-color: #006699; */
     color: #f0f0f0;
     border-radius: 20px 20px 0 0;
 }
@@ -97,10 +106,17 @@ th {
 }
 
 .info-carta {
-    height: 800px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     vertical-align: top;
+    transition: max-hegit 0.3s ease-in-out
 }
 
+.tabla.hidden  .contenedor-flex:nth-child(n+4){
+    max-height: 100%;
+    display: none;
+} 
 .info {
     font-size: 20px;
 }
@@ -108,6 +124,23 @@ th {
 .boton-carta {
     height: 150px;
     text-align: center;
+}
+
+.boton-mas {
+    background-color: #006699;
+    border-radius: 30px;
+    font-size: 25px;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.boton-mas:hover {
+    scale: 110% 110%;
 }
 
 .boton {
@@ -136,8 +169,6 @@ th {
     width: 25px;
     height: 25px;
 }
-
-
 
 .contenedor {
     display: flex;
@@ -196,6 +227,7 @@ table p {
 
 .slider {
     display: flex;
+    align-items: center;
     margin-bottom: 40%;
     width: 50%;
     height: 1100px;
@@ -255,9 +287,7 @@ table p {
 .modal_container_inputs {
     display: flex;
     flex-direction: row;
-    /* Organiza los elementos en una fila */
     align-items: center;
-    /* Alinea los elementos verticalmente */
 }
 
 .container_label_input {
@@ -281,6 +311,7 @@ table p {
     font-weight: 400;
     color: #888888;
 }
+
 .label_textarea {
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
@@ -332,7 +363,7 @@ section p {
 .modal_container_textarea {
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
-    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     box-sizing: border-box;
     position: relative;
 }
@@ -359,7 +390,7 @@ section .form-control {
     padding-top: 29px;
 }
 
-.modal_checkbox{
+.modal_checkbox {
     margin-inline: 20px;
 }
 
@@ -391,7 +422,7 @@ section .form-control {
     color: #FFFFFF;
 }
 
-.boton_insercion:hover{
+.boton_insercion:hover {
     color: #0ba72d;
     background-color: #f0f0f0;
 }
@@ -447,10 +478,8 @@ header img {
 .column-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    /* Cambia las columnas automáticamente según el ancho del contenido */
     gap: 20px;
     justify-content: center;
-    /* Centra las imágenes horizontalmente */
 }
 
 .column-container h2 {
@@ -490,9 +519,7 @@ header img {
 
 .img-container {
     width: 500px;
-    /* Ajusta el ancho según sea necesario */
     height: 200px;
-    /* Ajusta la altura según sea necesario */
     margin: 30px auto;
     padding: 10px;
     background-color: #ffffff;
@@ -509,7 +536,7 @@ header img {
     object-fit: contain;
 }
 
-/* 
+
 textarea {
     width: 100%;
     max-width: 450px;
@@ -520,12 +547,11 @@ textarea {
     border-radius: 3px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     resize: horizontal;
-} */
+}
 
 .exp-container {
     display: flex;
     gap: 126px;
-    /* Espacio entre los textarea */
 }
 
 textarea.Mes,
@@ -545,9 +571,7 @@ textarea.CVV {
 .titular-container {
     display: flex;
     gap: 40px;
-    /* Ajusta el espacio entre los elementos */
     margin-bottom: 5px;
-    /* Ajusta el espacio inferior */
     padding: 10px;
     width: 45%;
     align-items: flex-start;
@@ -563,9 +587,7 @@ textarea.CVV {
 .exp-cvv-container {
     display: flex;
     gap: 40px;
-    /* Ajusta el espacio entre los elementos */
     margin-bottom: 5px;
-    /* Ajusta el espacio inferior */
     padding: 10px;
     width: 45%;
     align-items: flex-start;
@@ -578,8 +600,6 @@ textarea.CVV {
     align-items: flex-start;
 }
 
-/* Estilos previamente definidos ... */
-
 .blue-button {
     background-color: #006699;
     color: white;
@@ -590,7 +610,6 @@ textarea.CVV {
     font-size: 16px;
     margin-left: 350px;
     text-decoration: none;
-    /* Ajusta el espacio entre el textarea y el botón */
 }
 
 .green-button {
@@ -603,7 +622,6 @@ textarea.CVV {
     font-size: 16px;
     margin-left: 1000px;
     text-decoration: none;
-    /* Ajusta el espacio entre el textarea y el botón */
     gap: 20%;
 }
 

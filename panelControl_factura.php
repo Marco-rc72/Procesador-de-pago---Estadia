@@ -1,6 +1,7 @@
 <?php
 include ('config/database.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,40 +16,28 @@ include ('config/database.php');
     <?php
     include 'includes/navbar.php';
     ?>
-        <h1>Tabla Compras</h1>
+        <h1>Tabla Detalle de la compra</h1>
         <div class="contenedor">
             <table>
-                <thead>
-                    <tr>
-                        <th>#Factura</th>
-                        <th>Fecha</th>
-                        <th>#Paquete</th>
-                        <th>#Usuario</th>
-                        <th>#Metodo de pago</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
+                <tr>
+                    <th>Id_compra</th>
+                    <th>Nombre del paquete</th>
+                    <th>Precio</th>
+                </tr>
                 <tbody>
-                <?php
-                $consulta = "SELECT p.id_compra p.name_package, p.price
-                FROM detalle_compra p JOIN compra pb ON p.id_compra = pb.id ";
-                $resultado = mysqli_query($conn, $consulta);
+            <?php
+            $consulta = "SELECT * FROM detalle_compra";    
+            $resultado = mysqli_query($conn, $consulta);
 
-                while ($fila = mysqli_fetch_array($resultado)) { 
+            while ($fila = mysqli_fetch_array($resultado)) { 
                 ?>
-                    <tr>
-                        <td class="counter"></td>
-                        <td><?php echo $fila['name_package'] ?></td>
-                        <td><?php echo $fila['name_package'] ?></td>
-                        <td><?php echo $fila['price'] ?></td>
-                        <td>
-                            <div>
-                                <a href="">Mostrar</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
+            <tr>
+                <td><?php echo $fila['id_compra'] ?></td>
+                <td><?php echo $fila['name_package'] ?></td>
+                <td><?php echo $fila['price'] ?></td>
+            </tr>
+            <?php } ?>
+        </tbody>
             </table>
         </div>
     <?php

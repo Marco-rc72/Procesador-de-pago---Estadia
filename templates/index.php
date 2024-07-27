@@ -20,49 +20,53 @@
                     $name_package = htmlspecialchars($fila['name_package'], ENT_QUOTES, 'UTF-8');
                     $price = htmlspecialchars($fila['price'], ENT_QUOTES, 'UTF-8');
                     ?>
-                    <table class="tabla">
-                        <thead>
-                            <tr>
-                                <th class="cabeza-carta"><?php echo $name_package; ?></th>
-                            </tr>
-                            <tr class="titulo-carta">
-                                <td>$<?php echo $price; ?></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="info-carta">
-                                <td>
-                                    <?php
-                                    $consulta_beneficios = "
-                                        SELECT benefits.name_benefits 
-                                        FROM package_benefits 
-                                        INNER JOIN benefits ON package_benefits.id_benefits = benefits.id_benefits 
-                                        WHERE package_benefits.id_package = $id_package";
-                                    $resultado_beneficios = mysqli_query($conn, $consulta_beneficios);
-                                    
-                                    while ($beneficio = mysqli_fetch_assoc($resultado_beneficios)) {
-                                        $name_benefit = htmlspecialchars($beneficio['name_benefits'], ENT_QUOTES, 'UTF-8');
-                                        ?>
-                                        <div class="contenedor-flex">
-                                            <img class="check" src="assets/img/green-check.png" alt="Verificado">
-                                            <p><?php echo $name_benefit; ?></p>
+                    <div class="contenedor-tabla">
+                        <table class="tabla hidden">
+                            <thead>
+                                <tr>
+                                    <th class="cabeza-carta"><?php echo $name_package; ?></th>
+                                </tr>
+                                <tr class="titulo-carta">
+                                    <td>$<?php echo $price; ?></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr class="info-carta ">
+                                        <td>
+                                            <?php
+                                            $consulta_beneficios = "
+                                                SELECT benefits.name_benefits 
+                                                FROM package_benefits 
+                                                INNER JOIN benefits ON package_benefits.id_benefits = benefits.id_benefits 
+                                                WHERE package_benefits.id_package = $id_package";
+                                            $resultado_beneficios = mysqli_query($conn, $consulta_beneficios);
+                                            
+                                            while ($beneficio = mysqli_fetch_assoc($resultado_beneficios)) {
+                                                $name_benefit = htmlspecialchars($beneficio['name_benefits'], ENT_QUOTES, 'UTF-8');
+                                                ?>
+                                                <div class="contenedor-flex">
+                                                    <img class="check" src="assets/img/green-check.png" alt="Verificado">
+                                                    <p><?php echo $name_benefit; ?></p>
+                                                </div>
+                                                <?php
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </div>
+                                <tr class="boton-carta">
+                                    <td>
+                                        <div>
+                                            <button class="boton-mas show-more">Ver más</button>
+                                            <p>
+                                                <a class="boton" href="#" onclick="addPackage(<?php echo $id_package; ?>, '<?php echo $name_package; ?>', '<?php echo $price; ?>')">Comprar</a>
+                                            </p>
                                         </div>
-                                        <?php
-                                    }
-                                    ?>
-                                </td>
-                            </tr>
-                            <tr class="boton-carta">
-                                <td>
-                                    <div>
-                                        <p>
-                                            <a class="boton" href="#" onclick="addPackage(<?php echo $id_package; ?>, '<?php echo $name_package; ?>', '<?php echo $price; ?>')">Comprar</a>
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 <?php } ?>
             </div>
             <img class="boton-derecha" id="btn-derecha" src="assets/img/btn-derecha.png" alt="Siguiente">

@@ -62,14 +62,7 @@ paypal.Buttons({
             
             <!-- Payment Methods -->
             <div class="img-container">
-                <a href="datos_tarjeta.php">
-                    <img src="assets/img/images.png" alt="Image">
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="datos_tarjeta.php">
-                    <img src="assets/img/banamex.png" alt="Banamex">
-                </a>
+        
             </div>
         </div>
         

@@ -20,6 +20,7 @@ include 'includes/footer.php';
 ?>
 
 <script src="js/slider.js"></script>
+<script src="js/mas.js"></script>
 <script src="js/modal.js"></script>
 </body>
 </html>
